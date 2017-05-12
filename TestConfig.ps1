@@ -4,11 +4,11 @@ Configuration TeamCity
 
   Node $MachineName
   {
-       File CreateFile {
+       File CreateFile
+       {
            DestinationPath = "c:\Test.txt"
            Ensure = "Present"
            Contents = "Hello DSC from ARM"
        }
    }
-  }
 }
