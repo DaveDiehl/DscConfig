@@ -14,6 +14,11 @@ Configuration TeamCity
            Ensure = "Present"
            Contents = "Hello DSC from ARM with Choco"
        }
-      
+       cChocoPackageInstaller installTeamCity
+ +       {
+ +         Name = "teamcity"
+ +         DependsOn = "[cChocoInstaller]installChoco"
+ +       }
+
    }
 }
