@@ -6,11 +6,15 @@ Configuration TeamCity
 
   Node $MachineName
   {
+      cChocoInstaller InstallChoco
+      {
+         InstallDir = "c:\choco"
+       }
        File CreateFile
        {
            DestinationPath = "c:\Test.txt"
            Ensure = "Present"
-           Contents = "Hello DSC from ARM"
+           Contents = "Hello DSC from ARM with Choco"
        }
    }
 }
