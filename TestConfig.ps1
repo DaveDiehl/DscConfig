@@ -2,9 +2,7 @@ Configuration TeamCity
 {
   Import-DscResource -ModuleName cChoco
 
-  param ($MachineName)
-
-  Node $MachineName
+  Node "front-vm"
   {
       cChocoInstaller InstallChoco
       {
