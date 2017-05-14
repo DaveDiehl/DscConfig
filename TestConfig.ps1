@@ -15,10 +15,10 @@ Configuration TeamCity
            Contents = "Hello DSC from ARM with Choco"
        }
        cChocoPackageInstaller installTeamCity
- +       {
- +         Name = "teamcity"
- +         DependsOn = "[cChocoInstaller]installChoco"
- +       }
+        {
+          Name = "teamcity"
+          DependsOn = "[cChocoInstaller]installChoco"
+        }
 
    }
 }
