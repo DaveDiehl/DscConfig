@@ -8,5 +8,12 @@ Configuration TeamCity
       {
          InstallDir = "c:\choco"
        }
+      Script installTeamCity
+      {
+        GetScript = {@{}}
+        SetScript = {choco install teamcity}
+        TestScript = {$false}
+
+      }
    }
 }
