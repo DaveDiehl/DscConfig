@@ -8,17 +8,5 @@ Configuration TeamCity
       {
          InstallDir = "c:\choco"
        }
-       File CreateFile
-       {
-           DestinationPath = "c:\Test.txt"
-           Ensure = "Present"
-           Contents = "Hello DSC from ARM with Choco"
-       }
-       cChocoPackageInstaller installTeamCity
-        {
-          Name = "teamcity"
-          DependsOn = "[cChocoInstaller]installChoco"
-        }
-
    }
 }
