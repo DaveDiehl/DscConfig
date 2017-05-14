@@ -11,7 +11,10 @@ Configuration TeamCity
       Script installTeamCity
       {
         GetScript = {@{}}
-        SetScript = {choco install teamcity -y}
+        SetScript = {
+          choco feature enable -n=allowGlobalConfirmation
+          choco install teamcity
+        }
         TestScript = {$false}
 
       }
