@@ -11,7 +11,7 @@ Configuration TeamCity
       Script installTeamCity
       {
         GetScript = {@{}}
-        SetScript = {choco install teamcity}
+        SetScript = {choco install teamcity -y}
         TestScript = {$false}
 
       }
