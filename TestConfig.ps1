@@ -22,11 +22,17 @@ Configuration TeamCity
       {
         GetScript = {@{}}
         SetScript = {
-          Get-Disk | `
-          Where partitionstyle -eq 'raw' | `
+          Write-Host "Begin"
+          Stop-Service -Name ShellHWDetection
+          Write-Host "Stopping Service to avoid Format Prompt"
+          Get-Disk | Where partitionstyle -eq 'raw' | `
           Initialize-Disk -PartitionStyle MBR -PassThru | `
           New-Partition -AssignDriveLetter -UseMaximumSize | `
           Format-Volume -FileSystem NTFS -NewFileSystemLabel "datadisk" -Confirm:$false
+
+          Write-Host "Restarting Service"
+          Start-Service -Name ShellHWDetection
+          Write-Host "Ending install manage disk"
         }
         TestScript = {$false}
 
