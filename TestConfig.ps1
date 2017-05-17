@@ -37,5 +37,18 @@ Configuration TeamCity
         TestScript = {$false}
 
       }
+      Script startTeamCity
+      {
+        GetScript = {@{}}
+        SetScript = {
+          Write-Host "Attempting to start TeamCity Service"
+          Start-Service -Name "TeamCity"
+          Write-Host "TeamCity Service Started"
+
+        }
+        TestScript = {$false}
+
+      }
+
    }
 }
